@@ -44,8 +44,12 @@ public class Main {
                 System.out.print("Title: "); String t = sc.nextLine();
                 System.out.print("Author: "); String a = sc.nextLine();
                 System.out.print("ISBN: "); String i = sc.nextLine();
-                lib.addBook(new Book(t, a, i));
-                System.out.println("Book added successfully.");
+                if (i.trim().isEmpty()) {
+                    System.out.println("Error: ISBN cannot be empty.");
+                } else {
+                    lib.addBook(new Book(t, a, i));
+                    System.out.println("Book added successfully.");
+                }
                 break;
             case 2:
                 System.out.print("User ID: "); String uid = sc.nextLine();
