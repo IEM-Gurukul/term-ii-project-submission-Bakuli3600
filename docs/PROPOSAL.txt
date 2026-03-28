@@ -1,0 +1,31 @@
+AP(OOP) TERM PROJECT PROPOSAL
+
+PROJECT TITLE:
+Library Management System (LMS)
+
+PROBLEM STATEMENT:
+Managing a library manually is inefficient, prone to human error, and lacks the ability to track book availability or borrowing limits in real-time. This project aims to automate these operations by providing a robust digital system to manage book inventory, user registrations, and transaction records. It addresses the need for a scalable and organized way to handle library data while ensuring that specific policies (like borrowing limits for students vs. staff) are automatically enforced.
+
+TARGET USER / AUDIENCE:
+Librarians, school/college administrators, and students in small to medium-sized educational institutions who need an automated way to manage their library collections and track borrowing history.
+
+CORE FEATURES:
+1. Inventory Management: Add, search, and track the availability status of books.
+2. User Management: Register students and librarians with distinct borrowing privileges.
+3. Automated Transactions: System-driven book issuing and returning with real-time status updates.
+4. Borrowing Limit Enforcement: Automated validation to ensure users do not exceed their assigned book limits (e.g., 3 for Students, 10 for Librarians).
+5. Transaction History Log: Maintenance of a detailed history of all issues and returns with timestamps.
+
+OOP CONCEPTS TO BE USED:
+- Abstraction: Implementation of the abstract User class.
+- Inheritance: Student and Librarian subclasses.
+- Polymorphism: Overriding getMaxBorrowLimit() for different user types.
+- Encapsulation: Use of private fields with public getters/setters in Book, User, and Transaction.
+- Exception Handling: Sanitizing user inputs in the CLI menu.
+- Collections: Using ArrayList/List for dynamic data management.
+
+BRIEF ARCHITECTURE DESCRIPTION:
+The project is built on a modular architecture consisting of three main layers:
+1. Entity Layer: Classes like Book, User, Student, Librarian, and Transaction define the core data models.
+2. Logic Layer: The Library class acts as the central manager, containing the business logic for adding items, searching the inventory, and processing transactions. It maintains the state of the library using Java Collections.
+3. Interface Layer: The Main class provides a Command-Line Interface (CLI) that facilitates user interaction, handles inputs, and communicates with the Logic Layer to perform requested operations.
