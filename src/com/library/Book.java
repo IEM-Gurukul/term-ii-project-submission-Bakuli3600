@@ -1,11 +1,20 @@
 package com.library;
 
+/**
+ * Represents a library book with title, author, and ISBN details.
+ */
 public class Book {
     private String title;
     private String author;
     private String isbn;
     private boolean isAvailable;
 
+    /**
+     * Constructs a new Book object.
+     * @param title Title of the book
+     * @param author Author of the book
+     * @param isbn Unique ISBN code
+     */
     public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
