@@ -1,6 +1,7 @@
 package com.library;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Library {
     private List<Book> books;
@@ -29,13 +30,9 @@ public class Library {
     }
 
     public List<Book> searchBooksByTitle(String title) {
-        List<Book> results = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                results.add(book);
-            }
-        }
-        return results;
+        return books.stream()
+                .filter(b -> b.getTitle().toLowerCase().contains(title.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     public User findUserById(String id) {
